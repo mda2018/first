@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+int f(int n){
+if(n>2)
+return f(n-10+f(n-2);
+else return 1;
+}
+
+int main(){
+int n;
+printf(n);
+scanf(n);
+cout << f(n);
+}

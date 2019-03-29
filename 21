@@ -1,0 +1,23 @@
+#!/bin/bash
+
+
+WORKING_DIRECTORY=""
+PREFIX=""
+VERBOSE=0
+for file in $(find $WORKING_DIRECTORY -name '*')
+do
+if [[ $file == $WORKING_DIRECTORY ]]
+then
+continue
+fi
+
+dir=$(dirname "$file")
+base=$(basename "$file")
+new="$dir/${PREFIX}$base"
+mv "$file" "$new"
+
+if (( $VERBOSE == 1 && $? == 0 ))
+then
+echo "$file -> $new"
+fi
+done
